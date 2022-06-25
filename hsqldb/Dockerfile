@@ -1,0 +1,4 @@
+FROM blacklabelops/hsqldb
+ENV HSQLDB_USER='sa'
+ENV HSQLDB_PASSWORD=
+EXPOSE 9001

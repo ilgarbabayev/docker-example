@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  hsqldb:
+    image: 'blacklabelops/hsqldb'
+    volumes:
+      - data:/opt/database
+    env_file:
+      - ./env/hsqldb.env
+  backend:
+    build: ./Docker
+    ports:
+      - '8080:8080'
+    env_file:
+      - ./env/backend.env
+    depends_on:
+      - hsqldb
+  frontend:
+    build: ./frontend
+    ports:
+      - '80:80'
+
+volumes:
+  data:
