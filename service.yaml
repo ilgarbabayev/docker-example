@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apppp-service
+spec:
+  selector:
+    apppp: frond-end-apppp
+  ports:
+    - port: 80
+      protocol: 'TCP'
+      targetPort: 80
+  type: LoadBalancer

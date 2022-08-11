@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apppp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apppp: frond-end-apppp
+  template:
+    metadata:
+      labels:
+        apppp: frond-end-apppp
+    spec:
+      containers:
+        - name: front-angular-apppp
+          image: babayevilqar/angular-frontend
