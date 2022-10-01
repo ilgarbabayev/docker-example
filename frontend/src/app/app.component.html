@@ -1,7 +1,13 @@
 <div style="padding: 13px;">
+
+  <p *ngFor="let alert of alerts">
+    {{ alert.type }} <br>{{ alert.message }}
+<!--    <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>-->
+  </p>
+
   <H1>Front End App</H1>
 
-  <button mat-button (click)="getAllModels()">Load Reg Model !!!</button>
+  <button mat-raised-button (click)="getAllModels()">Load Reg Model ! ! ! ! !</button>
   <mat-card *ngFor="let product of products" style="margin-top:10px;">
       <mat-card-header>
           <mat-card-title>{{product.name}}</mat-card-title>
@@ -17,5 +23,11 @@
           </p>
       </mat-card-content>
   </mat-card>
+  <p>
+    <button mat-raised-button color="primary" (click)="subscribeAndGetMessage()">Subscribe to Event and get message on console</button>
+  </p>
+<!--  <p>-->
+<!--    <button mat-raised-button color="warn" (click)="getMessage()">Get message on console</button>-->
+<!--  </p>-->
 </div>
 <router-outlet></router-outlet>
